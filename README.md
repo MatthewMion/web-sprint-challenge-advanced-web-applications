@@ -85,8 +85,8 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 > _Add the following tests within View.test.js._
 
-- [ ] Build a test that shows the `View` component can render zero articles without errors. Make sure the mock service called made when View mounts.
-- [ ] Build a test that shows the `View` component can render three articles without errors. Make sure the mock service called made when View mounts.
+- [x] Build a test that shows the `View` component can render zero articles without errors. Make sure the mock service called made when View mounts.
+- [] Build a test that shows the `View` component can render three articles without errors. Make sure the mock service called made when View mounts.
 
 ## Important Notes:
 

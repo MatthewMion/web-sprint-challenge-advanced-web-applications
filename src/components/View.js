@@ -35,14 +35,15 @@ const View = (props) => {
       .then((res) => {
         deleteArticle(id);
         setArticles(res.data);
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleEdit = (article) => {
     axiosWithAuth()
       .put(`http://localhost:5000/api/articles/${article.id}`, article)
       .then((res) => {
-        props.setArticles(res.data);
+        setArticles(res.data);
         setEditing(false);
       })
       .catch((err) => console.error(err));
