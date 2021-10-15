@@ -7,8 +7,7 @@ const articleService = () => {
       return res.data;
     })
     .catch((err) => {
-      console.error(err);
-      return err;
+      console.log(err);
     });
 };
 

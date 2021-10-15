@@ -33,7 +33,10 @@ const View = (props) => {
   const handleEdit = (article) => {
     axiosWithAuth()
       .put(`http://localhost:5000/api/articles/${article.id}`, article)
-      .then((res) => props.setArticles(res.data))
+      .then((res) => {
+        props.setArticles(res.data);
+        setEditing(false);
+      })
       .catch((err) => console.error(err));
   };
 

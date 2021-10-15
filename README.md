@@ -66,7 +66,7 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 - [x] `editId` is passed into the `EditForm` component. In `EditForm.js`, make a http request on mount to get the article with the id `editId`. Save the result in state.
 
-- [ ] In `View.js`, complete `handleEdit` so that a http request is made that updates the passed in article. Set the editing state to false when the request is complete. After successfully deleting the article on the api, update local state to reflect these changes.
+- [x] In `View.js`, complete `handleEdit` so that a http request is made that updates the passed in article. Set the editing state to false when the request is complete. After successfully deleting the article on the api, update local state to reflect these changes.
 
 ### Logout Authentication
 
@@ -78,9 +78,9 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 > _Add the following tests within Article.test.js._
 
-- [ ] Build a test that shows the `Article` component, given the correct props, can render without errors.
-- [ ] Build a test that shows that when a correctly formatted article is passed into the `Article` component, the correct headline, author, summary and body are displayed.
-- [ ] The `Article` component should display "Associated Press" when an author attribute is not avalible. Build a test that verifies that that is true.
+- [x] Build a test that shows the `Article` component, given the correct props, can render without errors.
+- [x] Build a test that shows that when a correctly formatted article is passed into the `Article` component, the correct headline, author, summary and body are displayed.
+- [x] The `Article` component should display "Associated Press" when an author attribute is not avalible. Build a test that verifies that that is true.
 - [ ] Build a test that show that when the deleteButton is pressed on an Article, the handleDelete functional property is executed.
 
 > _Add the following tests within View.test.js._
