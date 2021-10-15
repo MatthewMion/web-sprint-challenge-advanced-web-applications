@@ -8,8 +8,13 @@ const View = (props) => {
   const [articles, setArticles] = useState([]);
   const [editing, setEditing] = useState(false);
   const [editId, setEditId] = useState();
+
   useEffect(() => {
-    // setArticles(articleService());
+    const getArticles = async () => {
+      const newArticles = await articleService();
+      setArticles(newArticles);
+    };
+    getArticles();
   }, []);
 
   const handleDelete = (id) => {};
