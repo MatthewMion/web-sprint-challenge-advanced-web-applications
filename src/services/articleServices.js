@@ -1,7 +1,13 @@
+import axiosWithAuth from "../utils/axiosWithAuth";
 
-
-const articleService = ()=> {
-}
+const articleService = async () => {
+  axiosWithAuth()
+    .get("http://localhost:5000/api/articles")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => console.error(err));
+};
 
 export default articleService;
 
