@@ -3,6 +3,7 @@ import styled from "styled-components";
 import articleService from "../services/articleServices";
 import Article from "./Article";
 import EditForm from "./EditForm";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 const View = (props) => {
   const [articles, setArticles] = useState([]);
@@ -15,11 +16,26 @@ const View = (props) => {
       setArticles(newArticles);
     };
     getArticles();
-  }, []);
+  }, [articles]);
 
-  const handleDelete = (id) => {};
+  const deleteArticle = (id) => {
+    setArticles(articles.filter((article) => article.id !== +id));
+  };
+  const handleDelete = (id) => {
+    axiosWithAuth()
+      .delete(`http://localhost:5000/api/articles/${id}`)
+      .then((res) => {
+        deleteArticle(id);
+        setArticles(res.data);
+      });
+  };
 
-  const handleEdit = (article) => {};
+  const handleEdit = (article) => {
+    axiosWithAuth()
+      .put(`http://localhost:5000/api/articles/${article.id}`, article)
+      .then((res) => props.setArticles(res.data))
+      .catch((err) => console.error(err));
+  };
 
   const handleEditSelect = (id) => {
     setEditing(true);
