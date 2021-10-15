@@ -10,13 +10,21 @@ const View = (props) => {
   const [editing, setEditing] = useState(false);
   const [editId, setEditId] = useState();
 
+  // useEffect(() => {
+  //   const getArticles = async () => {
+  //     const newArticles = await articleService();
+  //     setArticles(newArticles);
+  //   };
+  //   getArticles();
+  // }, [articles]);
+
   useEffect(() => {
-    const getArticles = async () => {
-      const newArticles = await articleService();
-      setArticles(newArticles);
-    };
-    getArticles();
-  }, [articles]);
+    articleService()
+      .then((articles) => {
+        setArticles(articles);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const deleteArticle = (id) => {
     setArticles(articles.filter((article) => article.id !== +id));
